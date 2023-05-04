@@ -4,13 +4,19 @@
   box-sizing: border-box;
 }
 
-#inner {
-}
-
 .row {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.box {
-  flex: 1;
+#outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#inner {
+  border: 3px solid black;
 }
