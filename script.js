@@ -1,11 +1,11 @@
 /*
 * TODO:
-* Add buttons (which could look like the knobs on the sides)?
-* Buttons: (1) User selects grid size | (2) Clear the board
+* Alert users if grid is < 0 or > 75
+* shake animation to clear board?
 *
 */ 
 
-function createBoard(userInput) {
+function createBoard(userInput=40) {
   const board = document.getElementById('board');
   const totalArea = 600;
   const boxSize = totalArea / userInput;
@@ -40,19 +40,27 @@ function changeGrid() {
       document.getElementById('board').textContent = '';
       createBoard(userInput);
     }
-  })  
+    else {alert('Invalid input. Please try again.')}
+  });
 }
 
 function clearBoard() {
   const clearButton = document.getElementById('clear-btn');
   clearButton.addEventListener('click', () => {
+    // add 'animate' class
+    document.getElementById('outer').classList.add('animate');
+    // remove 'hovered' class from boxes
     const hovered = document.getElementsByClassName('box');
     for (let i = 0; i < hovered.length; i++) {
       hovered[i].classList.remove('hovered');
     }
+    // remove 'animate' class
+    clearButton.addEventListener('mouseout', () => {
+      document.getElementById('outer').classList.remove('animate');
+    })
   });
 }
 
-createBoard(30);
+createBoard();
 clearBoard();
 changeGrid();
