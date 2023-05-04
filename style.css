@@ -1,7 +1,13 @@
+@font-face {
+  font-family: myCursive;
+  src: url('./niconne-regular.ttf');
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .row {
@@ -10,11 +16,22 @@
   align-items: center;
 }
 
+.hovered {
+  background-color: #000000;
+}
+
 #outer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 16px;
   height: 100vh;
+}
+
+#title {
+  font-family: myCursive;
+  font-size: 50px;
 }
 
 #inner {

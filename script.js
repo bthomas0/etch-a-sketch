@@ -1,10 +1,8 @@
 const outer = document.getElementById('outer');
-const inner = document.createElement('div');
-let userInput = 5;
+const inner = document.getElementById('inner');
+let userInput = 30;
 let totalArea = 600;
 let boxSize = totalArea / userInput;
-inner.id = 'inner';
-outer.appendChild(inner);
 
 function createGrid() {
   // vertical (rows)
