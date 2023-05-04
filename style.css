@@ -5,9 +5,12 @@
 }
 
 #inner {
-  display: flex;
 }
 
 .row {
-  font-size: 50px;
+  display: flex;
+}
+
+.box {
+  flex: 1;
 }
