@@ -1,10 +1,3 @@
-/*
-* TODO:
-* Alert users if grid is < 0 or > 75
-* shake animation to clear board?
-*
-*/ 
-
 function createBoard(userInput=40) {
   const board = document.getElementById('board');
   const totalArea = 600;
@@ -20,10 +13,11 @@ function createBoard(userInput=40) {
       box = document.createElement('div')
       box.className = `box`;
       box.id = `box-${i}-${j}`;
-      // box sizes are based on totalArea and userInput values
+      // box sizes
       box.style.minHeight = `${boxSize}px`;
       box.style.minWidth = `${boxSize}px`;
       row.appendChild(box);
+      // mouseover event
       box.addEventListener('mouseover', (e) => {
         e.target.classList.add('hovered');
       });
@@ -34,7 +28,7 @@ function createBoard(userInput=40) {
 function changeGrid() {
   const gridButton = document.getElementById('grid-btn');
   gridButton.addEventListener('click', () => {
-    let userInput = prompt('Please enter a grid size (1-75):', 10);
+    let userInput = prompt('Please enter a grid size (1-75):', 40);
     if (userInput > 0 && userInput <= 75) {
       // erase current board before creating new one
       document.getElementById('board').textContent = '';
