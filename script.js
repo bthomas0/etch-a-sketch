@@ -5,13 +5,10 @@
 *
 */ 
 
-
-let userInput = 30;
-let totalArea = 600;
-let boxSize = totalArea / userInput;
-
-function createGrid() {
+function createBoard(userInput) {
   const board = document.getElementById('board');
+  const totalArea = 600;
+  const boxSize = totalArea / userInput;
   // vertical (rows)
   for (let i = 0; i < userInput; i++) {
     row = document.createElement('div');
@@ -34,6 +31,18 @@ function createGrid() {
   }
 }
 
+function changeGrid() {
+  const gridButton = document.getElementById('grid-btn');
+  gridButton.addEventListener('click', () => {
+    let userInput = prompt('Please enter a grid size (1-75):', 10);
+    if (userInput > 0 && userInput <= 75) {
+      // erase current board before creating new one
+      document.getElementById('board').textContent = '';
+      createBoard(userInput);
+    }
+  })  
+}
+
 function clearBoard() {
   const clearButton = document.getElementById('clear-btn');
   clearButton.addEventListener('click', () => {
@@ -44,5 +53,6 @@ function clearBoard() {
   });
 }
 
-createGrid();
+createBoard(30);
 clearBoard();
+changeGrid();
