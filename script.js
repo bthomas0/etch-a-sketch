@@ -29,15 +29,4 @@ function createGrid() {
   }
 }
 
-function createEventListeners() {
-  boxes = document.getElementsByClassName('box');
-  boxArray = [...boxes]
-  boxArray.forEach(box => {
-    box.addEventListener('click', (e) => {
-      console.log(e.id);
-    })
-  })
-}
-
 createGrid();
-// createEventListeners();
