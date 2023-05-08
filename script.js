@@ -19,8 +19,7 @@ function createBoard(userInput=40) {
       row.appendChild(box);
       // mouseover event
       box.addEventListener('mouseover', (e) => {
-        e.target.style.backgroundColor = 'blue';
-        // e.target.classList.add('hovered');
+        e.target.style.backgroundColor = `RGB(${chooseRandomColor()},${chooseRandomColor()},${chooseRandomColor()})`;
       });
     }
   }
@@ -54,6 +53,11 @@ function clearBoard() {
       document.getElementById('outer').classList.remove('animate');
     })
   });
+}
+
+function chooseRandomColor() {
+  // random number between 0-255 (inclusive), rounded down
+  return Math.floor(Math.random() * 255) + 1;  
 }
 
 createBoard();
