@@ -57,7 +57,7 @@ function clearBoard() {
 
 function chooseRandomColor() {
   // random number between 0-255 (inclusive), rounded down
-  return Math.floor(Math.random() * 255) + 1;  
+  return Math.floor(Math.random() * 256);  
 }
 
 createBoard();
