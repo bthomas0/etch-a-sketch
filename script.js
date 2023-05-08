@@ -19,7 +19,8 @@ function createBoard(userInput=40) {
       row.appendChild(box);
       // mouseover event
       box.addEventListener('mouseover', (e) => {
-        e.target.classList.add('hovered');
+        e.target.style.backgroundColor = 'blue';
+        // e.target.classList.add('hovered');
       });
     }
   }
@@ -46,7 +47,7 @@ function clearBoard() {
     // remove 'hovered' class from boxes
     const hovered = document.getElementsByClassName('box');
     for (let i = 0; i < hovered.length; i++) {
-      hovered[i].classList.remove('hovered');
+      hovered[i].style.backgroundColor = '#969696';
     }
     // remove 'animate' class
     clearButton.addEventListener('mouseout', () => {
